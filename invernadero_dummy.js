@@ -89,21 +89,18 @@ if (!Highcharts.theme) {
   });
 }
 
-//----------------------------HIGH CHART GRAFICA DE GAUGE-----------------------------------
+//----------------------------HIGH CHART GRAFICA DE GAUGE PARA EL SUELO-----------------------------------
 
-var gaugeOptions = 
-{
+var gaugeOptions = {
     chart: {
         type: 'solidgauge'
     },
-
     title: {
         text: 'Humedad del Suelo',
         style: {
             fontSize: '24px'
         }
     },
-
     pane: {
         center: ['50%', '85%'],
         size: '150%',
@@ -116,11 +113,9 @@ var gaugeOptions =
             shape: 'arc'
         }
     },
-
     exporting: {
         enabled: false
     },
-
     tooltip: {
         enabled: false
     },
@@ -143,7 +138,6 @@ var gaugeOptions =
             y: 16
         }
     },
-
     plotOptions: {
         solidgauge: {
             dataLabels: {
@@ -156,57 +150,47 @@ var gaugeOptions =
 };
 
 // GRAFICA DE HUMEDAD DEL SUELO
-var chartSpeed = Highcharts.chart('chart-temp', Highcharts.merge(gaugeOptions, 
-{
-    yAxis: 
-    {
+var chartSpeed = Highcharts.chart('chart-temp', Highcharts.merge(gaugeOptions, {
+    yAxis: {
         min: 0,
         max: 150,
-        title: 
-        {
+        title: {
             text: 'Humedad'
         }
     },
-
-    credits: 
-    {
+    credits: {
         enabled: false
     },
 
-    series: 
-    [{
+    series: [{
         name: 'Humedad Suelo',
         data: [0],
-        dataLabels: 
-        {
+        dataLabels: {
             format: '<div style="text-align:center">' +
                 '<span style="color: white; font-size:80px">{y}</span><br/>' + //TAMAÑO NUMERO DE ABAJO
                 '<span style="color: white; font-size:42px;opacity:0.4">%</span>' + //tamaño unidades
                 '</div>'
         },
-        tooltip: 
-        {
+        tooltip: {
             valueSuffix: 'SUELO'
         }
     }]
 }));
 
 
-// ACTUALIZAR GRAFICA
-setInterval(function() 
+// ACTUALIZAR GRAFICA HUMEDAD DEL SUELO
+setInterval(function()
 {
     var point,
         newVal,
         inc;
 
-    if (chartSpeed) 
-    {
+    if (chartSpeed){
         point = chartSpeed.series[0].points[0];
         inc = Math.round((Math.random() - 0.5) * 100);
         newVal = point.y + inc;
 
-        if (newVal < 0 || newVal > 200) 
-        {
+        if (newVal < 0 || newVal > 200){
             newVal = point.y - inc;
         }
         getReading_planta();
@@ -215,18 +199,15 @@ setInterval(function()
 }, 1000);
 
 
-//------------------HIGHCHART GRAFICA DE ACTIVIDAD ---------------------------
+//------------------HIGHCHART GRAFICA DEL SENSOR BME280 ---------------------------
 
-var graf = Highcharts.chart('container', 
-{
-    chart: 
-    {
+var graf = Highcharts.chart('container',{
+    chart: {
         type: 'solidgauge',
         height: '110%',
     },
 
-    credits: 
-    {
+    credits: {
         enabled: false
     },
 
@@ -236,12 +217,14 @@ var graf = Highcharts.chart('container',
             fontSize: '24px'
         }
     },
-
+    exporting: {
+        enabled: false
+    },
     tooltip: {
         borderWidth: 0,
         backgroundColor: 'none',
         shadow: false,
-        style: 
+        style:
         {
             fontSize: '12px' //tamaño de la letra
         },
@@ -258,15 +241,14 @@ var graf = Highcharts.chart('container',
     pane: {
         startAngle: 0,
         endAngle: 360,
-        background: [
-        { // TEMPERATURA AMBIENTE
+        background: [ { // TEMPERATURA AMBIENTE
             outerRadius: '112%',
             innerRadius: '88%',
             backgroundColor: Highcharts.color(Highcharts.getOptions().colors[0])
                 .setOpacity(0.3)
                 .get(),
             borderWidth: 0
-        }, 
+        },
         { // Track for Exercise
             outerRadius: '87%',
             innerRadius: '63%',
@@ -274,7 +256,7 @@ var graf = Highcharts.chart('container',
                 .setOpacity(0.3)
                 .get(),
             borderWidth: 0
-        }, 
+        },
         { // Track for Stand
             outerRadius: '62%',
             innerRadius: '38%',
@@ -287,20 +269,20 @@ var graf = Highcharts.chart('container',
 
     yAxis: [{
         //circulo de afuera
-        min: 0, //valor minimo 
+        min: 0, //valor minimo
         max: 50, // valor maximo
         lineWidth: 0,
         tickPositions: [],
     },
     {   //circulo del medio
-        min: 0, //valor minimo 
+        min: 0, //valor minimo
         max: 200, // valor maximo
         lineWidth: 0,
         tickPositions: [],
 
     },
     {   //circulo mas chico
-        min: 0, //valor minimo 
+        min: 0, //valor minimo
         max: 1500, // valor maximo
         lineWidth: 0,
         tickPositions: [],
@@ -346,6 +328,10 @@ var graf = Highcharts.chart('container',
         }]
     }]
 });
+
+
+// ACTUALIZAR LAS GRAFICAS
+
 
 // ACTUALIZAR GRAFICO DE TEMPERATURA
 setInterval(function() {
@@ -403,6 +389,3 @@ setInterval(function() {
         point.update(pres);
     }
 }, 1000);
-
-
-
