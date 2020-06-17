@@ -1,0 +1,81 @@
+#Titulo
+	{
+		padding-top:1%;
+		padding-bottom:1%;
+		background-color:#306754;
+		color:white;
+	}
+
+#medidor
+{
+	background:#2B1B17;
+}	
+	
+#footer
+{
+		padding-top:1.5%;
+		padding-bottom:1.5%;
+		background-color:#306754;
+		color:white;
+		font-size:100%;
+}
+	
+
+#container {
+	max-width: 364px;
+	max-height: 580px; 
+	margin: 0 auto;
+}
+
+.highcharts-figure, .highcharts-data-table table {
+	min-width: 150px;  
+	max-width: 280px;
+  margin: 0 auto;
+}
+
+.highcharts-data-table table {
+  font-family: Verdana, sans-serif;
+  border-collapse: collapse;
+  border: 1px solid #EBEBEB;
+  margin: 10px auto;
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+}
+.highcharts-data-table caption {
+  padding: 1em 0;
+  font-size: 1.2em;
+  color: #555;
+}
+.highcharts-data-table th {
+	font-weight: 100;
+  padding: 0.5em;
+}
+.highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+  padding: 0.5em;
+}
+.highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+  background: #f8f8f8;
+}
+.highcharts-data-table tr:hover {
+  background: #f1f7ff;
+}
+ ?>
+	
+.texto_responsive:before{
+  content: attr(data-desktoptext);
+}
+
+@media (max-width:1200px) {
+    .texto_responsive:before {
+        content: attr(data-tablettext);
+    }
+}
+
+@media (max-width:700px){
+    .texto_responsive:before {
+        content: attr(data-phonetext);
+    }
+}
+	
+	
