@@ -1,10 +1,10 @@
 var accessToken = "4205ec8413af1fcea23cd043c67b6c89d835e5a7";
 var deviceID = "270019000447363332363639"
 
-var url_hum = "https://api.particle.io/v1/devices/" + deviceID + "/Humedad";
-var url_pres = "https://api.particle.io/v1/devices/" + deviceID + "/Presion";
-var url_temp = "https://api.particle.io/v1/devices/" + deviceID + "/Temperatura";
-var url_plant = "https://api.particle.io/v1/devices/" + deviceID + "/Planta";
+var url_hum = "https://api.particle.io/v1/devices/" + deviceID + "/hum_amb";
+var url_pres = "https://api.particle.io/v1/devices/" + deviceID + "/pres_amb";
+var url_temp = "https://api.particle.io/v1/devices/" + deviceID + "/temp_amb";
+var url_plant = "https://api.particle.io/v1/devices/" + deviceID + "/hum_soil";
 
 
 // TEMPERATURA AMBIENTE
