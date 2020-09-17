@@ -2,8 +2,8 @@
 
 Dashboard for an automated indoor greenhouse with Photon Particle IoT   
 
-The Photon microcontroller gets the value from the multiple sensors and decide if our plant is at low level of soil humidity or not. If humidity is low it will start the water pump for a couple of seconds depending on the humidity level.   
-It will gather the ambient humidity, atmospheric pressure and temperature, likewise the plant soil humidity, uv levels and water tank level.
+The Photon microcontroller gets the value from the multiple sensors and decide if our plant is at low level of soil humidity or not. If humidity is low it will start the water pump for a couple of seconds depending on the soil humidity level.   
+It will gather the ambient humidity, atmospheric pressure and temperature, likewise the plant soil humidity, uv and water tank levels.
 
 
 ## TODO:
