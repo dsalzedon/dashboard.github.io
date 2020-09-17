@@ -6,7 +6,7 @@ The Photon microcontroller gets the value from the multiple sensors and decide i
 It will gather the ambient humidity, atmospheric pressure and temperature, likewise the plant soil humidity, uv and water tank levels.
 
 
-## TODO:
+### TODO:
 - [x] Get ambient values: pressure, humidity and temperature
 - [x] Turn on water pump when soil humidity level is low  
 - [x] Get into stand by mode for a low power mode, turn on after 2 mins  
