@@ -1,17 +1,16 @@
-# Invernadero Autmatizado
+# Automated Greenhouse
 
-Codigo para el invernadero automatizado yendo por partes para su completo funcionamiento.
+Dashboard for an automated indoor greenhouse with Photon Particle IoT
 
-## Hasta el momento:
-
-- [x] prende la bomba de agua de acuerdo al nivel de humedad del suelo   
-- [x] se mantiene en standby, revisa los sensores y vuelve a su modo de bajo consumo de energia   
-- [x] manda las variables a la nube para ser obtenidas por los graficos en la web   
-- [x] funciona el sensor del ambiente   
 
 ## TODO:
-- [ ] sensor de nivel de agua   
-- [ ] mandar info de "momento en que se activo la bomba de agua"   
-- [ ] mandar info de temperatura y humedad al momento de activar la bomab de agua   
-- [ ] funcion para desactivar el standby   
-- [ ] funcion para activar la bomba de agua desde la web   
+- [x] Ambient sensor working
+- [x] Turn on water pump when soil humidity level is low  
+- [x] Get into stand by mode for a low power mode, turn on after 2 mins  
+- [x] Send the sensor's values to the cloud for them to be plot 
+- [ ] Water level sensor
+- [ ] UV level sensor
+- [ ] Send time at which the water pump turns on
+- [ ] Send the exact levels from humidity and temperature sensors at turning the water pump on  
+- [ ] Stop the standby from the web
+- [ ] Turn the water pump from the web 
